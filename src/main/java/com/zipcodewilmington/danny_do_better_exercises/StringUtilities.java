@@ -1,5 +1,7 @@
 package com.zipcodewilmington.danny_do_better_exercises;
 
+import java.util.Arrays;
+
 /**
  * Created by dan on 6/14/17.
  */
@@ -75,7 +77,6 @@ public class StringUtilities {
             return inputValue.charAt((inputValue.length()-1)/2);
         } else
             return inputValue.charAt((inputValue.length()/2));
-
     }
 
 
@@ -84,7 +85,8 @@ public class StringUtilities {
      * @return the first sequence of characters
      */
     public static String getFirstWord(String spaceDelimitedString){
-        return null;
+
+        return spaceDelimitedString.substring(0,spaceDelimitedString.indexOf(' '));
     }
 
     /**
@@ -92,14 +94,29 @@ public class StringUtilities {
      * @return the second word of a string delimited by spaces.
      */
     public static String getSecondWord(String spaceDelimitedString){
-        return null;
+
+       String [] str = spaceDelimitedString.split(" ");
+
+       return str[1];
+
     }
+
 
     /**
      * @param stringToReverse
      * @return an identical string with characters in reverse order.
      */
     public static String reverse(String stringToReverse){
-        return null;
+
+        if ( stringToReverse == null) {
+            return null;
+        }
+
+        String answer = "";
+        for (int i = stringToReverse.length() - 1; i >= 0; i--) {
+           answer = answer + stringToReverse.charAt(i);
+        }
+        return answer;
+
     }
 }
